@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="osintbot.tools" property="og:title"/>
+  <meta content="Osintbot is a powerful osint tool that allows you to search multiple data sources in real time." property="og:description"/>
+  <meta content="https://osintbot.tools" property="og:url"/>
+  <meta content="https://osintbot.tools/assets/logo.png" property="og:image"/>
+  <meta content="image/png" property="og:image:type"/>
+  <meta content="150" property="og:image:width"/>
+  <meta content="150" property="og:image:height"/>
+  <title>
+   OsintBot - Terms of Service
+  </title>
+  <link href="logo.png" rel="icon" type="image/png"/>
+  <link href="css2" rel="stylesheet"/>
+  <link href="all.css" rel="stylesheet"/>
+  <style>
+   * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f0f0f;
+            color: #f5f5f5;
+            min-height: 100vh;
+            padding: 2rem 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .bg-animation {
+            position: fixed;
+            inset: 0;
+            z-index: -1;
+            pointer-events: none;
+        }
+
+        .bg-animation::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(ellipse at top right, rgba(139, 92, 246, 0.12) 0%, transparent 60%),
+                        radial-gradient(ellipse at bottom left, rgba(168, 85, 247, 0.08) 0%, transparent 60%);
+            animation: backgroundShift 20s ease-in-out infinite;
+        }
+
+        .back-button {
+            position: fixed;
+            top: 1rem;
+            left: 1rem;
+            width: 48px;
+            height: 48px;
+            background: rgba(139, 92, 246, 0.1);
+            border: 1px solid rgba(139, 92, 246, 0.3);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+            animation: slideIn 0.6s ease-out;
+        }
+
+        .back-button:hover {
+            background: rgba(139, 92, 246, 0.25);
+            transform: scale(1.15) rotate(5deg);
+            border-color: rgba(139, 92, 246, 0.6);
+        }
+
+        .back-button i {
+            font-size: 1.5rem;
+            color: #a78bfa;
+            transition: transform 0.3s ease;
+        }
+
+        .back-button:hover i {
+            transform: rotate(-5deg);
+        }
+
+        @keyframes backgroundShift {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            50% { transform: scale(1.05) rotate(1deg); }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes bounceIn {
+            0% { transform: scale(0.5); opacity: 0; }
+            100% { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes neonGlow {
+            0% {
+                text-shadow: 0 0 2px rgba(139, 92, 246, 0.4),
+                            0 0 4px rgba(139, 92, 246, 0.3),
+                            0 0 6px rgba(139, 92, 246, 0.2);
+                transform: translateY(0);
+            }
+            50% {
+                text-shadow: 0 0 8px rgba(139, 92, 246, 0.8),
+                            0 0 12px rgba(139, 92, 246, 0.6),
+                            0 0 16px rgba(139, 92, 246, 0.4);
+                transform: translateY(-2px);
+            }
+            100% {
+                text-shadow: 0 0 2px rgba(139, 92, 246, 0.4),
+                            0 0 4px rgba(139, 92, 246, 0.3),
+                            0 0 6px rgba(139, 92, 246, 0.2);
+                transform: translateY(0);
+            }
+        }
+
+        .container {
+            max-width: 960px;
+            background: #18181b;
+            padding: 2.5rem 3rem;
+            border-radius: 16px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1s ease;
+        }
+
+        .sidebar-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .sidebar-logo {
+            width: 64px;
+            height: 64px;
+            border-radius: 12px;
+            animation: bounceIn 0.6s ease;
+        }
+
+        .sidebar-title {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #fafafa;
+            margin: 0.2rem 0 1rem;
+        }
+
+        h1 {
+            font-size: 1.8rem;
+            margin-top: 0;
+            color: #e4e4e7;
+        }
+
+        h2 {
+            font-size: 1.4rem;
+            color: #d4d4d8;
+            margin-top: 2rem;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #a1a1aa;
+            line-height: 1.7;
+            margin-left: 10px;
+        }
+
+        ul {
+            padding-left: 1.5rem;
+        }
+
+        ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: #8b5cf6;
+            text-decoration: none;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #a78bfa;
+            animation: neonGlow 1.2s;
+        }
+
+        a:hover::after {
+            content: '';
+            position: absolute;
+            bottom: -3px;
+            left: 0;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #8b5cf6, #d8b4fe);
+            box-shadow: 0 0 12px rgba(139, 92, 246, 0.7);
+            transform: scaleX(1);
+            transform-origin: left;
+            animation: underlineGlow 1.2s;
+        }
+
+        @keyframes underlineGlow {
+            0% { transform: scaleX(0); }
+            100% { transform: scaleX(1); }
+        }
+
+        .main-content {
+            animation: fadeIn 1.5s ease;
+        }
+
+        .footer-note {
+            font-size: 0.7rem;
+            color: #71717a;
+            text-align: center;
+            display: block;
+            margin-top: 2rem;
+        }
+
+        p {
+            margin-top: 5px;
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        p::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 4px;
+            background: linear-gradient(180deg, #8b5cf6, #d8b4fe);
+            border-radius: 2px;
+            box-shadow: 0 0 10px rgba(139, 92, 246, 0.5);
+            animation: glowLine 2s infinite;
+        }
+
+        ul {
+            position: relative;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+            margin-top: 1rem;
+            color: #a1a1aa;
+        }
+
+        ul::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            
+        }
+
+        ul li {
+            list-style: none;
+            position: relative;
+            padding-left: 0.5rem;
+            margin-bottom: 0.75rem;
+        }
+
+        @keyframes glowLine {
+            0% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.3); }
+            50% { box-shadow: 0 0 15px rgba(139, 92, 246, 0.6); }
+            100% { box-shadow: 0 0 5px rgba(139, 92, 246, 0.3); }
+        }
+
+        .important-notice {
+            background: rgba(220, 38, 38, 0.1);
+            border: 1px solid rgba(220, 38, 38, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .important-notice::before {
+            background: linear-gradient(180deg, #dc2626, #ef4444);
+        }
+
+        .gdpr-section {
+            background: rgba(34, 197, 94, 0.1);
+            border: 1px solid rgba(34, 197, 94, 0.3);
+            border-radius: 8px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+
+        .gdpr-section::before {
+            background: linear-gradient(180deg, #22c55e, #4ade80);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem 1.5rem;
+                margin-top: 4rem;
+            }
+
+            .back-button {
+                width: 40px;
+                height: 40px;
+            }
+
+            .back-button i {
+                font-size: 1.2rem;
+            }
+
+            .sidebar-title {
+                font-size: 1.8rem;
+            }
+
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            h2 {
+                font-size: 1.3rem;
+            }
+
+            p, ul {
+                font-size: 0.95rem;
+            }
+        }
+  </style>
+ </head>
+ <body>
+  <div class="bg-animation">
+  </div>
+  <button class="back-button" onclick="history.back()">
+   <i class="fa-solid fa-arrow-left-to-bracket">
+   </i>
+  </button>
+  <div class="container">
+   <div class="sidebar-header">
+    <img alt="OsintBot Logo" class="sidebar-logo" src="logo.png"/>
+    <h2 class="sidebar-title">
+     OsintBot
+    </h2>
+    <h1>
+     Terms of Service &amp; Privacy Policy
+    </h1>
+   </div>
+   <div class="main-content">
+    <div class="important-notice">
+     <p>
+      <strong>
+       IMPORTANT:
+      </strong>
+      These terms include mandatory privacy information required by GDPR and French law. Please read carefully before using our services.
+     </p>
+    </div>
+    <h2>
+     1. Service Provider Information
+    </h2>
+    <p>
+     <strong>
+      Company:
+     </strong>
+     Snow Services
+     <br/>
+     <strong>
+      Legal Form:
+     </strong>
+     Sole Proprietorship
+     <br/>
+     <strong>
+      Registration:
+     </strong>
+     94377717700016
+     <br/>
+     <strong>
+      Address:
+     </strong>
+     <br/>
+     <strong>
+      Email:
+     </strong>
+     <a href="/cdn-cgi/l/email-protection#8cefe3e2f8edeff8cce3ffe5e2f8eee3f8a2f8e3e3e0ff">
+      <span class="__cf_email__" data-cfemail="86e5e9e8f2e7e5f2c6e9f5efe8f2e4e9f2a8f2e9e9eaf5">
+       [email protected]
+      </span>
+     </a>
+     <br/>
+     <strong>
+      DPO Contact:
+     </strong>
+     <a href="/cdn-cgi/l/email-protection#dfbbafb09fb0acb6b1abbdb0abf1abb0b0b3ac">
+      <span class="__cf_email__" data-cfemail="c5a1b5aa85aab6acabb1a7aab1ebb1aaaaa9b6">
+       [email protected]
+      </span>
+     </a>
+    </p>
+    <h2>
+     2. Acceptance of Terms
+    </h2>
+    <p>
+     By registering and using OsintBot, you acknowledge having read, understood, and agreed to these Terms of Service and Privacy Policy. Registration constitutes explicit consent to data processing as described herein. Users under 16 years old are prohibited from using this service in compliance with GDPR Article 8.
+    </p>
+    <h2>
+     3. Service Overview
+    </h2>
+    <p>
+     OsintBot provides Open Source Intelligence (OSINT) research capabilities through third-party API integrations. Our services include:
+    </p>
+    <ul>
+     <li>
+      Email, username, and phone number lookups via public APIs (Microsoft, Discord, etc.)
+     </li>
+     <li>
+      Access to publicly available breach databases
+     </li>
+     <li>
+      Intelligence X data retrieval using system identifiers
+     </li>
+     <li>
+      IP address geolocation and ISP information
+     </li>
+     <li>
+      DNS record analysis and subdomain enumeration
+     </li>
+    </ul>
+    <p>
+     <strong>
+      Important:
+     </strong>
+     We act as a data processor only. All data is retrieved from external sources in real-time and is not stored on our systems.
+    </p>
+    <div class="gdpr-section">
+     <h2>
+      4. Data Protection &amp; Privacy (GDPR Compliance)
+     </h2>
+     <h3>
+      4.1 Data Controller
+     </h3>
+     <p>
+      OsintBot acts as both data controller (for user account data) and data processor (for search operations). For searches, the user is the data controller and bears responsibility for lawful processing.
+     </p>
+     <h3>
+      4.2 Personal Data We Collect
+     </h3>
+     <p>
+      We collect and process the following personal data:
+     </p>
+     <ul>
+      <li>
+       <strong>
+        Account Data:
+       </strong>
+       Username, email address, hashed passwords
+      </li>
+      <li>
+       <strong>
+        Technical Data:
+       </strong>
+       IP addresses, browser information, access logs
+      </li>
+      <li>
+       <strong>
+        Usage Data:
+       </strong>
+       Search queries, timestamps, feature usage (for abuse prevention)
+      </li>
+      <li>
+       <strong>
+        Payment Data:
+       </strong>
+       Processed through third-party payment processors (we do not store payment details)
+      </li>
+     </ul>
+     <h3>
+      4.3 Legal Basis for Processing
+     </h3>
+     <ul>
+      <li>
+       <strong>
+        Contract Performance:
+       </strong>
+       Account management and service delivery (Art. 6(1)(b) GDPR)
+      </li>
+      <li>
+       <strong>
+        Legitimate Interest:
+       </strong>
+       Security monitoring, abuse prevention, service improvement (Art. 6(1)(f) GDPR)
+      </li>
+      <li>
+       <strong>
+        Legal Obligation:
+       </strong>
+       Compliance with law enforcement requests (Art. 6(1)(c) GDPR)
+      </li>
+      <li>
+       <strong>
+        Consent:
+       </strong>
+       Marketing communications (Art. 6(1)(a) GDPR) - where explicitly provided
+      </li>
+     </ul>
+     <h3>
+      4.4 Data Retention
+     </h3>
+     <ul>
+      <li>
+       <strong>
+        Account Data:
+       </strong>
+       Retained until account deletion + 30 days for security
+      </li>
+      <li>
+       <strong>
+        Search Logs:
+       </strong>
+       90 days maximum (for abuse prevention)
+      </li>
+      <li>
+       <strong>
+        Security Logs:
+       </strong>
+       12 months maximum
+      </li>
+      <li>
+       <strong>
+        Legal Compliance:
+       </strong>
+       May be retained longer if required by law
+      </li>
+     </ul>
+     <h3>
+      4.5 Your Rights Under GDPR
+     </h3>
+     <p>
+      You have the following rights regarding your personal data:
+     </p>
+     <ul>
+      <li>
+       <strong>
+        Access (Art. 15):
+       </strong>
+       Request a copy of your personal data
+      </li>
+      <li>
+       <strong>
+        Rectification (Art. 16):
+       </strong>
+       Correct inaccurate personal data
+      </li>
+      <li>
+       <strong>
+        Erasure (Art. 17):
+       </strong>
+       Request deletion of your data (with legal exceptions)
+      </li>
+      <li>
+       <strong>
+        Portability (Art. 20):
+       </strong>
+       Receive your data in a structured format
+      </li>
+      <li>
+       <strong>
+        Restriction (Art. 18):
+       </strong>
+       Limit processing under certain conditions
+      </li>
+      <li>
+       <strong>
+        Objection (Art. 21):
+       </strong>
+       Object to processing based on legitimate interests
+      </li>
+      <li>
+       <strong>
+        Withdraw Consent:
+       </strong>
+       For consent-based processing
+      </li>
+     </ul>
+     <p>
+      To exercise these rights, contact:
+      <a href="/cdn-cgi/l/email-protection#7511051a351a061c1b01171a015b011a1a1906">
+       <span class="__cf_email__" data-cfemail="187c687758776b71766c7a776c366c7777746b">
+        [email protected]
+       </span>
+      </a>
+     </p>
+     <h3>
+      4.6 Data Transfers
+     </h3>
+     <p>
+      Your data may be processed by third-party API providers outside the EU. We ensure adequate protection through:
+     </p>
+     <ul>
+      <li>
+       Standard Contractual Clauses (SCCs)
+      </li>
+      <li>
+       Adequacy decisions where applicable
+      </li>
+      <li>
+       Minimization of transferred data
+      </li>
+     </ul>
+    </div>
+    <h2>
+     5. User Responsibilities &amp; Prohibited Activities
+    </h2>
+    <p>
+     Users must comply with all applicable laws and regulations. Prohibited activities include:
+    </p>
+    <ul>
+     <li>
+      Harassment, stalking, doxxing, or intimidation
+     </li>
+     <li>
+      Unauthorized surveillance or impersonation
+     </li>
+     <li>
+      Violation of privacy, data protection, or cybersecurity laws
+     </li>
+     <li>
+      Processing personal data without lawful basis
+     </li>
+     <li>
+      Circumventing platform security measures
+     </li>
+     <li>
+      Commercial use without proper authorization
+     </li>
+    </ul>
+    <div class="important-notice">
+     <p>
+      <strong>
+       USER LIABILITY:
+      </strong>
+      You are solely responsible for ensuring your use complies with GDPR, French data protection law (Loi Informatique et Libertés), and all applicable regulations. We reserve the right to suspend accounts for suspected violations.
+     </p>
+    </div>
+    <h2>
+     6. Monitoring &amp; Security
+    </h2>
+    <p>
+     We implement monitoring systems to prevent abuse and ensure service security:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Automated Monitoring:
+      </strong>
+      Search patterns analyzed for prohibited activities
+     </li>
+     <li>
+      <strong>
+       Rate Limiting:
+      </strong>
+      Prevents excessive usage and potential abuse
+     </li>
+     <li>
+      <strong>
+       Security Logging:
+      </strong>
+      Access attempts and suspicious activities logged
+     </li>
+     <li>
+      <strong>
+       Manual Review:
+      </strong>
+      Suspected violations may trigger human review
+     </li>
+    </ul>
+    <p>
+     We may cooperate with law enforcement when legally required or when we have reasonable belief of illegal activity.
+    </p>
+    <h2>
+     7. External Data Sources
+    </h2>
+    <p>
+     Search results are retrieved from third-party sources over which we have no control. We are not responsible for:
+    </p>
+    <ul>
+     <li>
+      Accuracy, completeness, or currency of external data
+     </li>
+     <li>
+      Data removal requests (must be directed to source providers)
+     </li>
+     <li>
+      Compliance of external sources with data protection laws
+     </li>
+     <li>
+      Availability or reliability of third-party APIs
+     </li>
+    </ul>
+    <h2>
+     8. Payments &amp; Refunds
+    </h2>
+    <p>
+     All payments are processed through secure third-party providers. Our refund policy:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       No Refunds:
+      </strong>
+      All purchases are final
+     </li>
+     <li>
+      <strong>
+       Service Credits:
+      </strong>
+      May be provided for significant service disruptions
+     </li>
+     <li>
+      <strong>
+       Dispute Resolution:
+      </strong>
+      Payment disputes handled through payment processor
+     </li>
+     <li>
+      <strong>
+       Account Termination:
+      </strong>
+      No refunds for terminated accounts due to terms violation
+     </li>
+    </ul>
+    <h2>
+     9. Service Availability &amp; Modifications
+    </h2>
+    <p>
+     We reserve the right to:
+    </p>
+    <ul>
+     <li>
+      Modify or discontinue services with reasonable notice
+     </li>
+     <li>
+      Update these terms (users will be notified)
+     </li>
+     <li>
+      Suspend service for maintenance or security reasons
+     </li>
+     <li>
+      Terminate accounts for terms violations
+     </li>
+    </ul>
+    <h2>
+     10. Limitation of Liability
+    </h2>
+    <p>
+     OsintBot provides services "as is" without warranties. Our liability is limited as follows:
+    </p>
+    <ul>
+     <li>
+      No liability for user actions or third-party data
+     </li>
+     <li>
+      Maximum liability limited to fees paid in the last 12 months
+     </li>
+     <li>
+      No liability for indirect, consequential, or punitive damages
+     </li>
+     <li>
+      Service interruptions or data accuracy issues
+     </li>
+    </ul>
+    <p>
+     <strong>
+      Nothing in these terms limits liability for death, personal injury, fraud, or gross negligence.
+     </strong>
+    </p>
+    <h2>
+     11. Jurisdiction &amp; Dispute Resolution
+    </h2>
+    <p>
+     These terms are governed by French law. For EU residents:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       Jurisdiction:
+      </strong>
+      French courts have jurisdiction
+     </li>
+     <li>
+      <strong>
+       Consumer Rights:
+      </strong>
+      EU consumer protection laws apply where applicable
+     </li>
+     <li>
+      <strong>
+       Mediation:
+      </strong>
+      EU consumers may use the EU Online Dispute Resolution platform
+     </li>
+     <li>
+      <strong>
+       Regulatory Complaints:
+      </strong>
+      GDPR complaints may be filed with your local supervisory authority
+     </li>
+    </ul>
+    <h2>
+     12. Contact Information
+    </h2>
+    <p>
+     For questions, complaints, or exercising your rights:
+    </p>
+    <ul>
+     <li>
+      <strong>
+       General Contact:
+      </strong>
+      <a href="/cdn-cgi/l/email-protection#32515d5c46535146725d415b5c46505d461c465d5d5e41">
+       <span class="__cf_email__" data-cfemail="fc9f9392889d9f88bc938f9592889e9388d2889393908f">
+        [email protected]
+       </span>
+      </a>
+     </li>
+     <li>
+      <strong>
+       Data Protection Officer:
+      </strong>
+      <a href="/cdn-cgi/l/email-protection#a5c1d5cae5cad6cccbd1c7cad18bd1cacac9d6">
+       <span class="__cf_email__" data-cfemail="91f5e1fed1fee2f8ffe5f3fee5bfe5fefefde2">
+        [email protected]
+       </span>
+      </a>
+     </li>
+     <li>
+      <strong>
+       Legal Issues:
+      </strong>
+      <a href="/cdn-cgi/l/email-protection#a0ccc5c7c1cce0cfd3c9ced4c2cfd48ed4cfcfccd3">
+       <span class="__cf_email__" data-cfemail="345851535558745b475d5a40565b401a405b5b5847">
+        [email protected]
+       </span>
+      </a>
+     </li>
+     <li>
+      <strong>
+       Discord Support:
+      </strong>
+      <a href="https://discord.gg/snowsvc">
+       Join our Discord
+      </a>
+     </li>
+    </ul>
+    <h2>
+     13. Cookie Policy
+    </h2>
+    <p>
+     We use essential cookies for service functionality and may use analytics cookies with your consent. You can manage cookie preferences in your browser settings.
+    </p>
+    <div class="footer-note">
+     <p>
+      <strong>
+       Compliance Note:
+      </strong>
+      This service is designed for lawful OSINT research only. Users must ensure compliance with all applicable data protection and privacy laws. Misuse may result in legal consequences and immediate account termination.
+     </p>
+    </div>
+   </div>
+  </div>
+  <script data-cfasync="false" src="email-decode.min.js">
+  </script>
+  <script>
+   (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f8e9cd99e40424',t:'MTc1Nzk0NzU4Mw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+  </script>
+ </body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="osintbot.tools" property="og:title"/>
+  <meta content="Osintbot is a powerful osint tool that allows you to search multiple data sources in real time." property="og:description"/>
+  <meta content="https://osintbot.tools" property="og:url"/>
+  <meta content="https://osintbot.tools/assets/logo.png" property="og:image"/>
+  <meta content="image/png" property="og:image:type"/>
+  <meta content="150" property="og:image:width"/>
+  <meta content="150" property="og:image:height"/>
+  <title>
+   OsintBot - Login
+  </title>
+  <link href="logo_login.png" rel="icon" type="image/png"/>
+  <link href="css2_login" rel="stylesheet"/>
+  <link href="all_login.css" rel="stylesheet"/>
+  <link href="reglog_login.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="bg-animation">
+  </div>
+  <div class="container">
+   <div class="main-content">
+    <img alt="OsintBot Logo" class="sidebar-logo" src="logo.png"/>
+    <h2 class="sidebar-title">
+     OsintBot
+    </h2>
+    <form action="login.php" class="signup-form" method="POST">
+     <div class="form-group">
+      <label for="username">
+       Username
+      </label>
+      <input id="username" name="username" placeholder="Enter your username" required="" type="text"/>
+     </div>
+     <div class="form-group">
+      <label for="password">
+       Password
+      </label>
+      <input id="password" name="password" placeholder="Enter your password" required="" type="password"/>
+     </div>
+     <button class="submit-btn" type="submit">
+      Log In
+     </button>
+     <a href="https://discord.com/oauth2/authorize?client_id=1417163767480979658&response_type=code&redirect_uri=file%3A%2F%2F%2FC%3A%2FUsers%2Ffortn%2FDesktop%2Fweb%2Fdashboard.html&scope=email">
+      <button class="discord-button" type="button">
+       Log In with Discord
+       <i class="fa-brands fa-discord">
+       </i>
+      </button>
+     </a>
+     <p class="login-link">
+      No account?
+      <a href="register.php">
+       Register here
+      </a>
+     </p>
+     <p class="login-link">
+      Password lost?
+      <a href="recover.php">
+       Reset here
+      </a>
+     </p>
+    </form>
+   </div>
+  </div>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+
+    fetch('https://api.ipify.org?format=json')
+
+        .then(response => response.json())
+
+        .then(data => {
+
+            document.getElementById('user_ip').value = data.ip || '';
+
+        })
+
+        .catch(error => {
+
+            console.error('Error fetching IP:', error);
+
+            document.getElementById('user_ip').value = '';
+
+        });
+
+});
+  </script>
+  <script>
+   (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f8ec6f4fe6cbc2',t:'MTc1Nzk0NzY5MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+  </script>
+ </body>
+</html>
