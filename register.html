@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport"/>
+  <meta content="osintbot.tools" property="og:title"/>
+  <meta content="Osintbot is a powerful osint tool that allows you to search multiple data sources in real time." property="og:description"/>
+  <meta content="https://osintbot.tools" property="og:url"/>
+  <meta content="https://osintbot.tools/assets/logo.png" property="og:image"/>
+  <meta content="image/png" property="og:image:type"/>
+  <meta content="150" property="og:image:width"/>
+  <meta content="150" property="og:image:height"/>
+  <title>
+   OsintBot - Register
+  </title>
+  <link href="logo.png" rel="icon" type="image/png"/>
+  <link href="css2" rel="stylesheet"/>
+  <link href="all.css" rel="stylesheet"/>
+  <link href="reglog.css" rel="stylesheet"/>
+  <script>
+   document.addEventListener('DOMContentLoaded', () => {
+            const passwordInput = document.getElementById('password');
+            const passwordConfirmation = document.querySelector('.password-confirmation');
+
+            let typingTimer;
+            const doneTypingInterval = 700;
+
+            passwordInput.addEventListener('input', () => {
+                clearTimeout(typingTimer);
+                if (passwordInput.value.length > 0) {
+                    typingTimer = setTimeout(() => {
+                        passwordConfirmation.style.display = 'block';
+                    }, doneTypingInterval);
+                } else {
+                    clearTimeout(typingTimer);
+                    passwordConfirmation.style.display = 'none';
+                }
+            });
+
+            fetch('https://api.ipify.org?format=json')
+                .then(response => response.json())
+                .then(data => {
+                    const userIp = data.ip || '';
+                    const ipInput = document.createElement('input');
+                    ipInput.type = 'hidden';
+                    ipInput.name = 'user_ip';
+                    ipInput.value = userIp;
+                    document.querySelector('.signup-form').appendChild(ipInput);
+                })
+                .catch(error => {
+                    console.error('Error fetching IP:', error);
+                    const ipInput = document.createElement('input');
+                    ipInput.type = 'hidden';
+                    ipInput.name = 'user_ip';
+                    ipInput.value = '';
+                    document.querySelector('.signup-form').appendChild(ipInput);
+                });
+        });
+  </script>
+ </head>
+ <body>
+  <div class="bg-animation">
+  </div>
+  <div class="container">
+   <div class="main-content">
+    <img alt="OsintBot Logo" class="sidebar-logo" src="logo.png"/>
+    <h2 class="sidebar-title">
+     OsintBot
+    </h2>
+    <form action="register_req.php" class="signup-form" method="POST">
+     <div class="form-group">
+      <label for="username">
+       Username
+      </label>
+      <input id="username" name="username" placeholder="Enter your username" required="" type="text"/>
+     </div>
+     <div class="form-group">
+      <label for="email">
+       Email
+      </label>
+      <input id="email" name="email" placeholder="Enter your email" required="" type="email"/>
+     </div>
+     <div class="form-group">
+      <label for="password">
+       Password
+      </label>
+      <input id="password" name="password" placeholder="Enter your password" required="" type="password"/>
+     </div>
+     <div class="form-group password-confirmation" style="display: none;">
+      <label for="password-confirm">
+       Repeat Password
+      </label>
+      <input id="password-confirm" name="password-confirm" placeholder="Repeat your password" required="" type="password"/>
+     </div>
+     <div class="checkbox-group">
+      <label class="custom-checkbox">
+       <input id="terms" name="terms" required="" type="checkbox"/>
+       <svg class="checkmark" viewbox="0 0 12 12">
+        <path d="M1 5 L4 8 L11 1" stroke-linecap="round">
+        </path>
+       </svg>
+      </label>
+      <label class="terms-label" for="terms">
+       I agree to the
+       <a href="tos.php">
+        Terms of Service
+       </a>
+      </label>
+     </div>
+     <button class="submit-btn" type="submit">
+      Sign Up
+     </button>
+     <a href="https://discord.com/oauth2/authorize?client_id=1361417061712134365&amp;response_type=code&amp;redirect_uri=https%3A%2F%2Fosintbot.tools%2Fregister.php&amp;scope=identify%20email">
+      <button class="discord-button" type="button">
+       Register with Discord
+       <i class="fa-brands fa-discord">
+       </i>
+      </button>
+     </a>
+     <p class="login-link">
+      Already have an account?
+      <a href="login.php">
+       Log in
+      </a>
+     </p>
+    </form>
+   </div>
+  </div>
+  <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" src="jquery-3.3.1.slim.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" src="popper.min.js">
+  </script>
+  <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" src="bootstrap.min.js">
+  </script>
+  <script src="now-ui-kit.min.js">
+  </script>
+  <script src="disable-devtool@latest">
+  </script>
+  <script>
+   (function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'97f91a8528300341',t:'MTc1Nzk0OTU3OQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();
+  </script>
+ </body>
+</html>
